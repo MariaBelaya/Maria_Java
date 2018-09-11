@@ -1,0 +1,23 @@
+Index: sandbox/src/main/java/ru/stqa/pft/sandbox/MyFirstProgram.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- sandbox/src/main/java/ru/stqa/pft/sandbox/MyFirstProgram.java	(date 1536660199000)
++++ sandbox/src/main/java/ru/stqa/pft/sandbox/MyFirstProgram.java	(date 1536660199000)
+@@ -1,4 +1,5 @@
+ package ru.stqa.pft.sandbox;
++import javax.sound.midi.Soundbank;
+ import java.util.Scanner;
+ 
+ import java.sql.SQLOutput;
+@@ -20,7 +21,9 @@
+     System.out.println(("Координаты первой точки на плоскости ") + a.inputPoint();
+ 
+     Point b = new Point(8, 8);
++    
+ 
++
+     if (a.isSame(b)) {
+       System.out.println("Точки совпадают");
+     } else {
