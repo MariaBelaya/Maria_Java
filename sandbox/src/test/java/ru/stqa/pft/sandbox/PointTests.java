@@ -8,12 +8,13 @@ public class PointTests {
   @Test
   public void testPointOne() {
     Point a = new Point(2, 2);
-    Assert.assertEquals(a.Math(), 4.0);
+    Point b = new Point(3,3);
+    Assert.assertEquals(a.distance(b), 1.4142135623730951);
   }
 
   @Test
   public void testPointTwo() {
     Point b = new Point(5, 5);
-    Assert.assertEquals(b.Math(), 25.0);
+    Assert.assertEquals(b.distance(b), 0.0);
   }
 }
