@@ -11,7 +11,7 @@ public class ContactHelper extends HelperBase {
     super(wd);
   }
 
-  public void selectContact() {
+  public void editContact() {
     click(By.xpath("//img[@alt='Edit']"));
   }
 
@@ -53,5 +53,10 @@ public class ContactHelper extends HelperBase {
 
   public void goToHomePage() {
     click(By.linkText("home"));
+  }
+
+  public void returnToHomePageModification() {
+    click(By.linkText("home"));
+
   }
 }
