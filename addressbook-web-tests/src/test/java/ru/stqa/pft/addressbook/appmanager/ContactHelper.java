@@ -23,7 +23,6 @@ public class ContactHelper extends HelperBase {
     click(By.linkText("add new"));
   }
 
-
   public void initContactCreation() {
     click(By.name("firstname"));
   }
@@ -45,7 +44,6 @@ public class ContactHelper extends HelperBase {
   public void submitContactCreation() {
     click(By.xpath("//input[21]"));
   }
-
 
   public void click(By Locator) {
     wd.findElement(Locator).click();
