@@ -2,6 +2,7 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoAlertPresentException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.stqa.pft.addressbook.model.ContactData;
 
@@ -64,5 +65,12 @@ public class ApplicationManager {
 
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
+  }
+
+  public void getContactHelper(By locator, String text) {
+    wd.findElement(By.linkText("home"));
+    wd.findElement(By.xpath("//img[@alt='Edit']"));
+    wd.findElement(By.xpath("//form[2]/input[2]"));
+
   }
 }

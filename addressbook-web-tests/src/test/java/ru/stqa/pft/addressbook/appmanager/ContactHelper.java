@@ -12,17 +12,23 @@ public class ContactHelper extends HelperBase {
   }
 
   public void selectContact() {
-    click(By.name("selected[]"));
+    click(By.xpath("//img[@alt='Edit']"));
+  }
+
+  public void deleteContact() {
+    click(By.xpath("//form[2]/input[2]"));
   }
 
   public void goToAddNewContactPage() {
     click(By.linkText("add new"));
   }
 
+
   public void initContactCreation() {
     click(By.name("firstname"));
   }
-  public void fillContactForm (ContactData contactData) {
+
+  public void fillContactForm(ContactData contactData) {
     type(By.name("firstname"), contactData.getName());
     type(By.name("lastname"), contactData.getSurname());
     type(By.name("address"), contactData.getAddress());
@@ -40,7 +46,12 @@ public class ContactHelper extends HelperBase {
     click(By.xpath("//input[21]"));
   }
 
+
   public void click(By Locator) {
     wd.findElement(Locator).click();
+  }
+
+  public void goToHomePage() {
+    click(By.linkText("home"));
   }
 }
