@@ -67,7 +67,7 @@ public class ApplicationManager {
     return navigationHelper;
   }
 
-  public void getContactHelper(By locator, String text) {
+  public void getContactHelper (By locator, String text) {
     wd.findElement(By.linkText("home"));
     wd.findElement(By.xpath("//img[@alt='Edit']"));
     wd.findElement(By.xpath("//form[2]/input[2]"));
