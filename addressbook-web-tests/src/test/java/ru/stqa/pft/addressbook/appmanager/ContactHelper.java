@@ -1,7 +1,11 @@
 package ru.stqa.pft.addressbook.appmanager;
 
+import javafx.scene.shape.CircleBuilder;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
 public class ContactHelper extends HelperBase {
@@ -27,12 +31,18 @@ public class ContactHelper extends HelperBase {
     click(By.name("firstname"));
   }
 
-  public void fillContactForm(ContactData contactData) {
+  public void fillContactForm(ContactData contactData, boolean creation) {
     type(By.name("firstname"), contactData.getName());
     type(By.name("lastname"), contactData.getSurname());
     type(By.name("address"), contactData.getAddress());
     type(By.name("mobile"), contactData.getTelephone());
     type(By.name("email"), contactData.getEmail());
+
+    if (creation) {
+      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+    } else {
+      Assert.assertFalse(isElementPresent (By.name("new_group")));
+    }
   }
 
   public void type(By Locator, String text) {
@@ -47,10 +57,6 @@ public class ContactHelper extends HelperBase {
 
   public void click(By Locator) {
     wd.findElement(Locator).click();
-  }
-
-  public void goToHomePage() {
-    click(By.linkText("home"));
   }
 
   public void returnToHomePageModification() {

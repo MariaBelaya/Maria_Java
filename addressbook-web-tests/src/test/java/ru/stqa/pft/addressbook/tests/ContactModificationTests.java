@@ -7,7 +7,7 @@ public class ContactModificationTests extends TestBase {
 
   @Test
   public void testContactModification() {
-    app.getContactHelper().goToHomePage();
+    app.getNavigationHelper().goToHomePage();
     app.getContactHelper().openEditContactPage();
     app.getContactHelper().deleteContact();
     app.getContactHelper().returnToHomePageModification();
