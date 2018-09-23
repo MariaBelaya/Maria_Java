@@ -31,17 +31,18 @@ public class ContactHelper extends HelperBase {
     click(By.name("firstname"));
   }
 
-  public void fillContactForm(ContactData contactData, boolean creation) {
+  public void fillContactForm(ContactData contactData) {
     type(By.name("firstname"), contactData.getName());
     type(By.name("lastname"), contactData.getSurname());
     type(By.name("address"), contactData.getAddress());
     type(By.name("mobile"), contactData.getTelephone());
     type(By.name("email"), contactData.getEmail());
 
+    boolean creation = true;
     if (creation) {
       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
     } else {
-      Assert.assertFalse(isElementPresent (By.name("new_group")));
+      Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
   }
 
@@ -62,5 +63,16 @@ public class ContactHelper extends HelperBase {
   public void returnToHomePageModification() {
     click(By.linkText("home"));
 
+  }
+
+  public void createContact(ContactData contact) {
+    initContactCreation();
+    fillContactForm(contact);
+    submitContactCreation();
+    returnToHomePageModification();
+  }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.xpath("//img[@alt='Edit']"));
   }
 }
