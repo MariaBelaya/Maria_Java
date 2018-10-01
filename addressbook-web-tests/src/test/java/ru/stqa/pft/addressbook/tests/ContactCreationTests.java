@@ -5,12 +5,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
+import java.util.List;
+
 public class ContactCreationTests extends TestBase {
 
   @Test
   public void testContactCreation() {
-    int before = app.getContactHelper().getContactCount();
-
+    List<ContactData> before = app.getContactHelper().getContactList();
     app.getContactHelper().goToAddNewContactPage();
     app.getContactHelper().createContact(new ContactData("Maria", "Belaya", "Moscow", "89123456789", "test@test.ru", "test1"));
 
@@ -20,9 +21,9 @@ public class ContactCreationTests extends TestBase {
       e.printStackTrace();
     }
 
-    int after = app.getContactHelper().getContactCount();
+    List<ContactData> after = app.getContactHelper().getContactList();
 
-    Assert.assertEquals(after, before + 1);
+    Assert.assertEquals(after.size(), before.size() + 1);
   }
 }
 
