@@ -46,12 +46,6 @@ public class ContactHelper extends HelperBase {
     type(By.name("mobile"), contactData.getTelephone());
     type(By.name("email"), contactData.getEmail());
 
-    boolean creation = true;
-    if (creation) {
-      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-    } else {
-      Assert.assertFalse(isElementPresent(By.name("new_group")));
-    }
   }
 
   public void type(By Locator, String text) {
@@ -93,8 +87,16 @@ public class ContactHelper extends HelperBase {
     List<WebElement> elements = wd.findElements(By.name("entry"));
 
     for (WebElement element : elements) {
-      String firstname = element.getText();
-      ContactData contact = new ContactData(firstname,null,null,null,null,null);
+      List<WebElement> tr = element.findElements(By.tagName("td"));
+
+      String name = tr.get(2).getText();
+      String surname = tr.get(1).getText();
+      String address = tr.get(3).getText();
+      String telephone = tr.get(5).getText();
+      String email = tr.get(4).getText();
+      String group = null;
+
+      ContactData contact = new ContactData(name, surname, address, telephone, email, group);
       contacts.add(contact);
     }
     return contacts;
