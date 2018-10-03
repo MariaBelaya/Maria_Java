@@ -95,8 +95,10 @@ public class ContactHelper extends HelperBase {
       String telephone = tr.get(5).getText();
       String email = tr.get(4).getText();
       String group = null;
+      String id = element.findElement(By.tagName("input")).getAttribute("value");
 
-      ContactData contact = new ContactData(name, surname, address, telephone, email, group);
+
+      ContactData contact = new ContactData(id, name, surname, address, telephone, email, group);
       contacts.add(contact);
     }
     return contacts;
