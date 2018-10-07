@@ -1,28 +1,30 @@
 package ru.stqa.pft.addressbook.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 
-import java.util.List;
+import java.util.Set;
 
 public class ContactDeletionTests extends TestBase {
 
+  @BeforeMethod
+  public void esurePreconditions() {
+    app.goTo().homePage();
+
+    if (app.contact().List().size() == 0) {
+      app.contact().goToAddNewContactPage();
+      app.contact().create(new ContactData().withName("Maria"));
+    }
+  }
 
   @Test
   public void testContactDeletion() {
-    app.getNavigationHelper().goToHomePage();
 
-    if (!app.getContactHelper().isThereAContact()) {
-      app.getContactHelper().goToAddNewContactPage();
-      app.getContactHelper().createContact(new ContactData("Maria", "Belaya", "Moscow", "89123456789", "test@test.ru", "[none]"));
-    }
-
-    List<ContactData> before = app.getContactHelper().getContactList();
-    app.getContactHelper().selectContact(before.size() - 1);
-    app.getContactHelper().openEditContactPage();
-    app.getContactHelper().deleteContact();
-    app.getContactHelper().returnToHomePageModification();
+    Set<ContactData> before = app.contact().all();
+    ContactData deletedContact = before.iterator().next();
+    app.contact().delete(deletedContact);
 
     try {
       Thread.sleep(3000);
@@ -30,10 +32,10 @@ public class ContactDeletionTests extends TestBase {
       e.printStackTrace();
     }
 
-    List<ContactData> after = app.getContactHelper().getContactList();
+    Set<ContactData> after = app.contact().all();
     Assert.assertEquals(after.size(), before.size() - 1);
 
-    before.remove(before.size() - 1);
+    before.remove(deletedContact);
     Assert.assertEquals(before, after);
   }
 }

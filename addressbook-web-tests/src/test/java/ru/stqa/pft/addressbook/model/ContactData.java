@@ -1,39 +1,57 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactData {
-  public void setId(int id) {
+
+
+  public ContactData withId(int id) {
     this.id = id;
+    return this;
   }
 
-  private  int id;
-  private final String name;
-  private final String surname;
-  private final String address;
-  private final String telephone;
-  private final String email;
-  private final String group;
 
-
-  public ContactData(String name, String surname, String address, String telephone, String email, String group) {
-    this.id = Integer.MAX_VALUE;
+  public ContactData withName(String name) {
     this.name = name;
-    this.surname = surname;
-    this.address = address;
-    this.telephone = telephone;
-    this.email = email;
-    this.group = group;
+    return this;
+
   }
 
-
-  public ContactData(int id, String name, String surname, String address, String telephone, String email, String group) {
-    this.id = id;
-    this.name = name;
+  public ContactData withSurname(String surname) {
     this.surname = surname;
-    this.address = address;
-    this.telephone = telephone;
-    this.email = email;
-    this.group = group;
+    return this;
+
   }
+
+  public ContactData withAddress(String address) {
+    this.address = address;
+    return this;
+
+  }
+
+  public ContactData withTelephone(String telephone) {
+    this.telephone = telephone;
+    return this;
+
+  }
+
+  public ContactData withEmail(String email) {
+    this.email = email;
+    return this;
+
+  }
+
+  public ContactData withGroup(String group) {
+    this.group = group;
+    return this;
+  }
+
+  private  int id = Integer.MAX_VALUE;
+  private  String name;
+  private  String surname;
+  private  String address;
+  private  String telephone;
+  private  String email;
+  private  String group;
+
 
   public int getId() {
     return id;
@@ -63,6 +81,7 @@ public class ContactData {
     return group;
   }
 
+
   @Override
   public String toString() {
     return "ContactData{" +
@@ -74,6 +93,7 @@ public class ContactData {
             ", email='" + email + '\'' +
             '}';
   }
+
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -81,6 +101,7 @@ public class ContactData {
 
     ContactData that = (ContactData) o;
 
+    if (id != that.id) return false;
     if (name != null ? !name.equals(that.name) : that.name != null) return false;
     if (surname != null ? !surname.equals(that.surname) : that.surname != null) return false;
     if (address != null ? !address.equals(that.address) : that.address != null) return false;
@@ -90,7 +111,8 @@ public class ContactData {
 
   @Override
   public int hashCode() {
-    int result = name != null ? name.hashCode() : 0;
+    int result = id;
+    result = 31 * result + (name != null ? name.hashCode() : 0);
     result = 31 * result + (surname != null ? surname.hashCode() : 0);
     result = 31 * result + (address != null ? address.hashCode() : 0);
     result = 31 * result + (telephone != null ? telephone.hashCode() : 0);
