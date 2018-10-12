@@ -38,17 +38,28 @@ public class ContactHelper extends HelperBase {
   public void fillContactForm(ContactData contactData) {
     type(By.name("firstname"), contactData.getName());
     type(By.name("lastname"), contactData.getSurname());
+    type(By.name("address"), contactData.getSurname());
     type(By.name("home"), contactData.getHomePhone());
     type(By.name("mobile"), contactData.getMobilPhone());
     type(By.name("work"), contactData.getWorkPhone());
+    type(By.name("email"), contactData.getEmail());
+    type(By.name("email2"), contactData.getEmail2());
+    type(By.name("email3"), contactData.getEmail3());
+
+
   }
 
-  public void fillContactFormWithPhone(ContactData contactData) {
+  public void fillContactFormWithPhoneAndEmail(ContactData contactData) {
     type(By.name("firstname"), contactData.getName());
     type(By.name("lastname"), contactData.getSurname());
+    type(By.name("address"), contactData.getSurname());
     type(By.name("home"), contactData.getHomePhone());
     type(By.name("mobile"), contactData.getMobilPhone());
     type(By.name("work"), contactData.getWorkPhone());
+    type(By.name("email"), contactData.getEmail());
+    type(By.name("email2"), contactData.getEmail2());
+    type(By.name("email3"), contactData.getEmail3());
+
   }
 
   public void type(By Locator, String text) {
@@ -86,7 +97,7 @@ public class ContactHelper extends HelperBase {
 
   public void modify(ContactData contact) {
     openEditContactPageById(contact.getId());
-    fillContactFormWithPhone(contact);
+    fillContactFormWithPhoneAndEmail(contact);
     updateContactCreation();
     contactCache = null;
     returnToHomePageModification();
@@ -140,10 +151,12 @@ public class ContactHelper extends HelperBase {
 
       String name = tr.get(2).getText();
       String surname = tr.get(1).getText();
+      String address = tr.get(3).getText();
       String allPhones = tr.get(5).getText();
+      String allEmails = tr.get(4).getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
       contactCache.add(new ContactData()
-              .withId(id).withName(name).withSurname(surname).withAllPhones(allPhones));
+              .withId(id).withName(name).withSurname(surname).withAddress(address).withhAllEmails(allEmails).withAllPhones(allPhones));
     }
     return new Contacts(contactCache);
   }
@@ -152,13 +165,17 @@ public class ContactHelper extends HelperBase {
     openEditContactPageById(contactData.getId());
     String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
     String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+    String address = wd.findElement(By.name("address")).getAttribute("value");
     String home = wd.findElement(By.name("home")).getAttribute("value");
     String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
     String work = wd.findElement(By.name("work")).getAttribute("value");
+    String email1 = wd.findElement(By.name("email")).getAttribute("value");
+    String email2 = wd.findElement(By.name("email2")).getAttribute("value");
+    String email3 = wd.findElement(By.name("email3")).getAttribute("value");
     wd.navigate().back();
     return new ContactData()
             .withId(contactData.getId()).withName(firstname)
-            .withSurname(lastname).withHomePhone(home)
+            .withSurname(lastname).withAddress(address).withEmail1(email1).withEmail2(email2).withEmail3(email3).withHomePhone(home)
             .withMobilPhone(mobile).withWorkPhone(work);
   }
   private void initContactModificationBiId(int id) {
