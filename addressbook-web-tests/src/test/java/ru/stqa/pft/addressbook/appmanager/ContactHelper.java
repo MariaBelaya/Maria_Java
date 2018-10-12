@@ -86,7 +86,6 @@ public class ContactHelper extends HelperBase {
 
   public void modify(ContactData contact) {
     openEditContactPageById(contact.getId());
-
     fillContactFormWithPhone(contact);
     updateContactCreation();
     contactCache = null;
@@ -153,9 +152,9 @@ public class ContactHelper extends HelperBase {
     openEditContactPageById(contactData.getId());
     String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
     String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
-    String home = wd.findElement(By.name("address")).getAttribute("value");
+    String home = wd.findElement(By.name("home")).getAttribute("value");
     String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
-    String work = wd.findElement(By.name("email")).getAttribute("value");
+    String work = wd.findElement(By.name("work")).getAttribute("value");
     wd.navigate().back();
     return new ContactData()
             .withId(contactData.getId()).withName(firstname)
@@ -164,9 +163,9 @@ public class ContactHelper extends HelperBase {
   }
   private void initContactModificationBiId(int id) {
     WebElement checkbox = wd.findElement(By.cssSelector(String.format("input[value='%s']", id)));
-    WebElement row = checkbox.findElement(By.xpath("./../.."));
-    List<WebElement> cells = row.findElements(By.tagName("td"));
-    cells.get(7).findElement(By.tagName("a")).click();
+    WebElement element = checkbox.findElement(By.xpath("./../.."));
+    List<WebElement> tr = element.findElements(By.tagName("td"));
+    tr.get(7).findElement(By.tagName("a")).click();
 
 
     //    wd.findElement(By.xpath(String.format("//input[@value='%s']/../../td[8]/a", id))).click();
