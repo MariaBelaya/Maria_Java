@@ -15,7 +15,7 @@ public class ContactCreationTests extends TestBase {
     app.goTo().homePage();
     Contacts before = app.contact().all();
     app.contact().goToAddNewContactPage();
-    ContactData contact = new ContactData().withSurname("Belaya").withName("Maria").withAddress("Moscow").withTelephone("8948372839").withEmail("test@test.ru");
+    ContactData contact = new ContactData().withSurname("Belaya").withName("Maria").withHomePhone("5467890").withMobilPhone("8948372839").withWorkPhone("687932424");
     app.contact().create(contact);
 
     try {
@@ -23,10 +23,27 @@ public class ContactCreationTests extends TestBase {
     } catch (InterruptedException e) {
       e.printStackTrace();
     }
-
+    assertThat(app.contact().count(), equalTo(before.size() + 1));
     Contacts after = app.contact().all();
-    assertThat(after.size(), equalTo(before.size() + 1));
     assertThat(after, equalTo(before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
+  }
+  @Test
+  public void testBadContactCreation() {
+    app.goTo().homePage();
+    Contacts before = app.contact().all();
+    app.contact().goToAddNewContactPage();
+    ContactData contact = new ContactData().withSurname("Belaya").withName("Maria'").withHomePhone("5467890").withMobilPhone("8948372839").withWorkPhone("687932424");;
+    app.contact().create(contact);
+
+    try {
+      Thread.sleep(2000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    assertThat(app.contact().count(), equalTo(before.size()));
+    Contacts after = app.contact().all();
+    assertThat(after, equalTo(before));
   }
 }
 

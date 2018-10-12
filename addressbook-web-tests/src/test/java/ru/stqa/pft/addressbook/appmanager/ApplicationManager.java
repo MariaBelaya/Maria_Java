@@ -53,19 +53,6 @@ public class ApplicationManager {
     sessionHelper.login("admin", "secret");
   }
 
-  public void fillContactForm(ContactData contactData) {
-    type(By.name("firstname"), contactData.getName());
-    type(By.name("lastname"), contactData.getSurname());
-    type(By.name("address"), contactData.getAddress());
-    type(By.name("mobile"), contactData.getTelephone());
-    type(By.name("email"), contactData.getEmail());
-  }
-
-  public void type(By Locator, String text) {
-    wd.findElement(Locator).click();
-    wd.findElement(Locator).clear();
-    wd.findElement(Locator).sendKeys(text);
-  }
 
   public void stop() {
     wd.quit();

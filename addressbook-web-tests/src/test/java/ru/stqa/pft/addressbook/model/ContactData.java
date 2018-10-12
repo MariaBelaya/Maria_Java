@@ -3,6 +3,16 @@ package ru.stqa.pft.addressbook.model;
 public class ContactData {
 
 
+  private int id = Integer.MAX_VALUE;
+  private String name;
+  private String surname;
+  private String group;
+  private String workPhone;
+  private String mobilPhone;
+  private String homePhone;
+
+
+
   public ContactData withId(int id) {
     this.id = id;
     return this;
@@ -21,36 +31,25 @@ public class ContactData {
 
   }
 
-  public ContactData withAddress(String address) {
-    this.address = address;
+  public ContactData withWorkPhone(String work) {
+    this.workPhone = work;
     return this;
-
   }
 
-  public ContactData withTelephone(String telephone) {
-    this.telephone = telephone;
+  public ContactData withHomePhone(String home) {
+    this.homePhone = home;
     return this;
-
   }
 
-  public ContactData withEmail(String email) {
-    this.email = email;
+  public ContactData withMobilPhone(String mobil) {
+    this.mobilPhone = mobil;
     return this;
-
   }
 
   public ContactData withGroup(String group) {
     this.group = group;
     return this;
   }
-
-  private  int id = Integer.MAX_VALUE;
-  private  String name;
-  private  String surname;
-  private  String address;
-  private  String telephone;
-  private  String email;
-  private  String group;
 
 
   public int getId() {
@@ -65,32 +64,35 @@ public class ContactData {
     return surname;
   }
 
-  public String getAddress() {
-    return address;
-  }
-
-  public String getTelephone() {
-    return telephone;
-  }
-
-  public String getEmail() {
-    return email;
-  }
 
   public String getGroup() {
     return group;
   }
 
 
+  public String getWorkPhone() {
+    return workPhone;
+  }
+
+  public String getMobilPhone() {
+    return mobilPhone;
+  }
+
+
+  public String getHomePhone() {
+    return homePhone;
+  }
+
+
   @Override
   public String toString() {
     return "ContactData{" +
-            "id='" + id + '\'' +
+            "id=" + id +
             ", name='" + name + '\'' +
             ", surname='" + surname + '\'' +
-            ", address='" + address + '\'' +
-            ", telephone='" + telephone + '\'' +
-            ", email='" + email + '\'' +
+            ", workPhone='" + workPhone + '\'' +
+            ", mobilPhone='" + mobilPhone + '\'' +
+            ", homePhone='" + homePhone + '\'' +
             '}';
   }
 
@@ -104,9 +106,9 @@ public class ContactData {
     if (id != that.id) return false;
     if (name != null ? !name.equals(that.name) : that.name != null) return false;
     if (surname != null ? !surname.equals(that.surname) : that.surname != null) return false;
-    if (address != null ? !address.equals(that.address) : that.address != null) return false;
-    if (telephone != null ? !telephone.equals(that.telephone) : that.telephone != null) return false;
-    return email != null ? email.equals(that.email) : that.email == null;
+    if (workPhone != null ? !workPhone.equals(that.workPhone) : that.workPhone != null) return false;
+    if (mobilPhone != null ? !mobilPhone.equals(that.mobilPhone) : that.mobilPhone != null) return false;
+    return homePhone != null ? homePhone.equals(that.homePhone) : that.homePhone == null;
   }
 
   @Override
@@ -114,9 +116,9 @@ public class ContactData {
     int result = id;
     result = 31 * result + (name != null ? name.hashCode() : 0);
     result = 31 * result + (surname != null ? surname.hashCode() : 0);
-    result = 31 * result + (address != null ? address.hashCode() : 0);
-    result = 31 * result + (telephone != null ? telephone.hashCode() : 0);
-    result = 31 * result + (email != null ? email.hashCode() : 0);
+    result = 31 * result + (workPhone != null ? workPhone.hashCode() : 0);
+    result = 31 * result + (mobilPhone != null ? mobilPhone.hashCode() : 0);
+    result = 31 * result + (homePhone != null ? homePhone.hashCode() : 0);
     return result;
   }
 }
