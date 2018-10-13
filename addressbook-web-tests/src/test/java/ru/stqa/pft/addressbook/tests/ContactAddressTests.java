@@ -11,16 +11,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactAddressTests extends TestBase {
 
-  @BeforeMethod
-  public void ensurePreconditions() {
-    app.goTo().homePage();
-    if (app.contact().List().size() == 0) {
-      app.contact().create(new ContactData().withName("Maria").withSurname("Belaya"));
-    }
-  }
 
   @Test
   public void testContactPhones(){
+    app.goTo().homePage();
     ContactData contact = app.contact().all().iterator().next();
     ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
 

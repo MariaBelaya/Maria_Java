@@ -1,5 +1,7 @@
 package ru.stqa.pft.addressbook.model;
 
+import java.io.File;
+
 public class ContactData {
 
 
@@ -8,16 +10,26 @@ public class ContactData {
   private String surname;
   private String address;
   private String group;
+  private String allPhones;
   private String workPhone;
   private String mobilPhone;
   private String homePhone;
+  private String allEmails;
   private String email;
   private String email2;
   private String email3;
-  private String allPhones;
-  private String allEmails;
+  private File photo;
 
 
+
+  public ContactData withPhoto(File photo) {
+    this.photo = photo;
+    return this;
+  }
+
+  public File getPhoto() {
+    return photo;
+  }
 
   public ContactData withAddress(String address) {
     this.address = address;
@@ -53,7 +65,6 @@ public class ContactData {
     return this;
   }
 
-
   public ContactData withName(String name) {
     this.name = name;
     return this;
@@ -86,7 +97,6 @@ public class ContactData {
     return this;
   }
 
-
   public int getId() {
     return id;
   }
@@ -99,11 +109,9 @@ public class ContactData {
     return surname;
   }
 
-
   public String getGroup() {
     return group;
   }
-
 
   public String getWorkPhone() {
     return workPhone;
@@ -112,7 +120,6 @@ public class ContactData {
   public String getMobilPhone() {
     return mobilPhone;
   }
-
 
   public String getHomePhone() {
     return homePhone;
@@ -134,7 +141,6 @@ public class ContactData {
     return email2;
   }
 
-
   public String getEmail3() {
     return email3;
   }
@@ -142,22 +148,13 @@ public class ContactData {
   public String getAddress() {
     return address;
   }
-
-
+  
   @Override
   public String toString() {
     return "ContactData{" +
             "id=" + id +
             ", name='" + name + '\'' +
             ", surname='" + surname + '\'' +
-            ", workPhone='" + workPhone + '\'' +
-            ", mobilPhone='" + mobilPhone + '\'' +
-            ", homePhone='" + homePhone + '\'' +
-            ", email='" + email + '\'' +
-            ", email2='" + email2 + '\'' +
-            ", email3='" + email3 + '\'' +
-            ", allPhones='" + allPhones + '\'' +
-            ", allEmails='" + allEmails + '\'' +
             '}';
   }
 
@@ -170,15 +167,7 @@ public class ContactData {
 
     if (id != that.id) return false;
     if (name != null ? !name.equals(that.name) : that.name != null) return false;
-    if (surname != null ? !surname.equals(that.surname) : that.surname != null) return false;
-    if (workPhone != null ? !workPhone.equals(that.workPhone) : that.workPhone != null) return false;
-    if (mobilPhone != null ? !mobilPhone.equals(that.mobilPhone) : that.mobilPhone != null) return false;
-    if (homePhone != null ? !homePhone.equals(that.homePhone) : that.homePhone != null) return false;
-    if (email != null ? !email.equals(that.email) : that.email != null) return false;
-    if (email2 != null ? !email2.equals(that.email2) : that.email2 != null) return false;
-    if (email3 != null ? !email3.equals(that.email3) : that.email3 != null) return false;
-    if (allPhones != null ? !allPhones.equals(that.allPhones) : that.allPhones != null) return false;
-    return allEmails != null ? allEmails.equals(that.allEmails) : that.allEmails == null;
+    return surname != null ? surname.equals(that.surname) : that.surname == null;
   }
 
   @Override
@@ -186,14 +175,6 @@ public class ContactData {
     int result = id;
     result = 31 * result + (name != null ? name.hashCode() : 0);
     result = 31 * result + (surname != null ? surname.hashCode() : 0);
-    result = 31 * result + (workPhone != null ? workPhone.hashCode() : 0);
-    result = 31 * result + (mobilPhone != null ? mobilPhone.hashCode() : 0);
-    result = 31 * result + (homePhone != null ? homePhone.hashCode() : 0);
-    result = 31 * result + (email != null ? email.hashCode() : 0);
-    result = 31 * result + (email2 != null ? email2.hashCode() : 0);
-    result = 31 * result + (email3 != null ? email3.hashCode() : 0);
-    result = 31 * result + (allPhones != null ? allPhones.hashCode() : 0);
-    result = 31 * result + (allEmails != null ? allEmails.hashCode() : 0);
     return result;
   }
 }

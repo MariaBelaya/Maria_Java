@@ -18,7 +18,7 @@ public class ContactDeletionTests extends TestBase {
 
     if (app.contact().List().size() == 0) {
       app.contact().goToAddNewContactPage();
-      app.contact().create(new ContactData().withName("Maria"));
+      app.contact().create(new ContactData());
     }
   }
 
