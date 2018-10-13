@@ -148,7 +148,7 @@ public class ContactData {
   public String getAddress() {
     return address;
   }
-  
+
   @Override
   public String toString() {
     return "ContactData{" +
