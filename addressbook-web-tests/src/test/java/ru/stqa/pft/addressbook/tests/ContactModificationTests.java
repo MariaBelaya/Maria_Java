@@ -17,7 +17,7 @@ public class ContactModificationTests extends TestBase {
 
     if (app.contact().List().size() == 0) {
       app.contact().goToAddNewContactPage();
-      app.contact().create(new ContactData());
+      app.contact().create(new ContactData(), true);
     }
   }
 

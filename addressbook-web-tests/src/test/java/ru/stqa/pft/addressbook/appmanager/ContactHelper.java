@@ -3,6 +3,8 @@ package ru.stqa.pft.addressbook.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
 
@@ -10,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContactHelper extends HelperBase {
+
 
 
   public ContactHelper(WebDriver wd) {
@@ -38,28 +41,6 @@ public class ContactHelper extends HelperBase {
   }
 
 
-  public void fillContactForm(ContactData contactData) {
-    type(By.name("firstname"), contactData.getName());
-    type(By.name("lastname"), contactData.getSurname());
-    type(By.name("address"), contactData.getAddress());
-    type(By.name("home"), contactData.getHomePhone());
-    type(By.name("mobile"), contactData.getMobilPhone());
-    type(By.name("work"), contactData.getWorkPhone());
-    type(By.name("email"), contactData.getEmail());
-    type(By.name("email2"), contactData.getEmail2());
-    type(By.name("email3"), contactData.getEmail3());
-
-
-  }
-
-
-
-  public void type(By Locator, String text) {
-    wd.findElement(Locator).click();
-    wd.findElement(Locator).clear();
-    wd.findElement(Locator).sendKeys(text);
-  }
-
   public void submitContactCreation() {
     click(By.xpath("//input[21]"));
   }
@@ -77,10 +58,33 @@ public class ContactHelper extends HelperBase {
     click(By.name("update"));
   }
 
+  public void fillContactForm(ContactData contactData, boolean creation) {
+    type(By.name("firstname"), contactData.getName());
+    type(By.name("lastname"), contactData.getSurname());
+    attach(By.name("photo"), contactData.getPhoto());
+    type(By.name("address"), contactData.getAddress());
+    type(By.name("home"), contactData.getHomePhone());
+    type(By.name("mobile"), contactData.getMobilPhone());
+    type(By.name("work"), contactData.getWorkPhone());
+    type(By.name("email"), contactData.getEmail());
+    type(By.name("email2"), contactData.getEmail2());
+    type(By.name("email3"), contactData.getEmail3());
 
-  public void create(ContactData contact) {
+    if (creation) {
+      if (contactData.getGroup() != null) {
+        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+      }
+    } else {
+        Assert.assertFalse(isElementPresent(By.name("new_group")));
+      }
+
+    }
+
+
+
+  public void create(ContactData contact, boolean group) {
     initContactCreation();
-    fillContactForm(contact);
+    fillContactForm(contact, group);
     submitContactCreation();
     returnToHomePageModification();
   }
@@ -88,10 +92,11 @@ public class ContactHelper extends HelperBase {
 
   public void modify(ContactData contact) {
     openEditContactPageById(contact.getId());
-    fillContactForm(contact);
+    fillContactForm(contact, false);
     updateContactCreation();
     returnToHomePageModification();
   }
+
 
   public void delete(ContactData contact) {
     openEditContactPageById(contact.getId());

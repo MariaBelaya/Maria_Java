@@ -12,7 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactCreationTests extends TestBase {
 
-  @Test (enabled = false)
+  @Test
   public void testContactCreation() {
     app.goTo().homePage();
     Contacts before = app.contact().all();
@@ -21,7 +21,7 @@ public class ContactCreationTests extends TestBase {
     ContactData contact = new ContactData().withSurname("Belaya").withName("Maria").withPhoto(photo).withAddress("Moscow")
             .withHomePhone("5467890").withMobilPhone("8948372839").withWorkPhone("687932424").withEmail1("test@test.ru")
             .withEmail2("test1@test.ru").withEmail3("test2@test.ru");
-    app.contact().create(contact);
+    app.contact().create(contact, true);
 
     try {
       Thread.sleep(3000);
@@ -37,16 +37,6 @@ public class ContactCreationTests extends TestBase {
   }
 
 
-  @Test
-  public void testCurrentDir() {
-    File currentDir = new File(".");
-    System.out.println(currentDir.getAbsolutePath());
-    File photo = new File("src/test/resources/linux.png");
-    System.out.println(photo.getAbsolutePath());
-    System.out.println(photo.exists());
-
-  }
-
 
   @Test (enabled = false)
   public void testBadContactCreation() {
@@ -56,7 +46,7 @@ public class ContactCreationTests extends TestBase {
     ContactData contact = new ContactData().withSurname("Belaya").withName("Maria'").withAddress("Moscow")
             .withHomePhone("5467890").withMobilPhone("8948372839").withWorkPhone("687932424").withEmail1("test@test.ru")
             .withEmail2("test1@test.ru").withEmail3("test2@test.ru");
-    app.contact().create(contact);
+    app.contact().create(contact, true);
 
     try {
       Thread.sleep(2000);
