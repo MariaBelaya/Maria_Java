@@ -1,0 +1,67 @@
+<list>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <name>maria
+0</name>
+    <surname>belaya
+0</surname>
+    <address>moscow
+0</address>
+    <homePhone>12345
+0</homePhone>
+    <email>test@test.ru
+0</email>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <name>maria
+1</name>
+    <surname>belaya
+1</surname>
+    <address>moscow
+1</address>
+    <homePhone>12345
+1</homePhone>
+    <email>test@test.ru
+1</email>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <name>maria
+2</name>
+    <surname>belaya
+2</surname>
+    <address>moscow
+2</address>
+    <homePhone>12345
+2</homePhone>
+    <email>test@test.ru
+2</email>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <name>maria
+3</name>
+    <surname>belaya
+3</surname>
+    <address>moscow
+3</address>
+    <homePhone>12345
+3</homePhone>
+    <email>test@test.ru
+3</email>
+  </ru.stqa.pft.addressbook.model.ContactData>
+  <ru.stqa.pft.addressbook.model.ContactData>
+    <id>2147483647</id>
+    <name>maria
+4</name>
+    <surname>belaya
+4</surname>
+    <address>moscow
+4</address>
+    <homePhone>12345
+4</homePhone>
+    <email>test@test.ru
+4</email>
+  </ru.stqa.pft.addressbook.model.ContactData>
+</list>
