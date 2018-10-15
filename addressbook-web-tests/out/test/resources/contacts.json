@@ -1,1 +1,23 @@
-[{"id":2147483647,"name":"maria\n0","surname":"belaya\n0","address":"moscow\n0","homePhone":"12345\n0","email":"test@test.ru\n0"},{"id":2147483647,"name":"maria\n1","surname":"belaya\n1","address":"moscow\n1","homePhone":"12345\n1","email":"test@test.ru\n1"},{"id":2147483647,"name":"maria\n2","surname":"belaya\n2","address":"moscow\n2","homePhone":"12345\n2","email":"test@test.ru\n2"}]
+[
+  {
+    "name": "maria\n0",
+    "surname": "belaya\n0",
+    "address": "moscow\n0",
+    "homePhone": "12345\n0",
+    "email": "test@test.ru\n0"
+  },
+  {
+    "name": "maria\n1",
+    "surname": "belaya\n1",
+    "address": "moscow\n1",
+    "homePhone": "12345\n1",
+    "email": "test@test.ru\n1"
+  },
+  {
+    "name": "maria\n2",
+    "surname": "belaya\n2",
+    "address": "moscow\n2",
+    "homePhone": "12345\n2",
+    "email": "test@test.ru\n2"
+  }
+]
