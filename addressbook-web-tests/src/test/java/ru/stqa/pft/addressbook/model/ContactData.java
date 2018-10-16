@@ -17,20 +17,20 @@ public class ContactData {
   private String surname;
   @Expose
   private String address;
-  @Expose
   private String group;
   private String allPhones;
   private String workPhone;
   private String mobilPhone;
   @Expose
   private String homePhone;
-  @Expose
   private String allEmails;
   @Expose
   private String email;
   private String email2;
+  @Expose
   private String email3;
   private File photo;
+
 
 
 
