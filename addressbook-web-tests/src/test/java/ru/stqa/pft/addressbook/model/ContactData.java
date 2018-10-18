@@ -17,6 +17,7 @@ public class ContactData {
   private String surname;
   @Expose
   private String address;
+  @Expose
   private String group;
   private String allPhones;
   private String workPhone;
@@ -27,11 +28,8 @@ public class ContactData {
   @Expose
   private String email;
   private String email2;
-  @Expose
   private String email3;
   private File photo;
-
-
 
 
   public ContactData withPhoto(File photo) {
@@ -47,6 +45,7 @@ public class ContactData {
     this.address = address;
     return this;
   }
+
   public ContactData withhAllEmails(String allEmails) {
     this.allEmails = allEmails;
     return this;
@@ -99,8 +98,8 @@ public class ContactData {
     return this;
   }
 
-  public ContactData withMobilPhone(String mobil) {
-    this.mobilPhone = mobil;
+  public ContactData withMobilPhone(String mobile) {
+    this.mobilPhone = mobile;
     return this;
   }
 
@@ -142,7 +141,7 @@ public class ContactData {
   }
 
   public String getAllEmails() {
-    return  allEmails;
+    return allEmails;
   }
 
   public String getEmail() {

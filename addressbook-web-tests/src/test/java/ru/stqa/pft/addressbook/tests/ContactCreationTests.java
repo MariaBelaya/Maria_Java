@@ -8,6 +8,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.Contacts;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -24,6 +25,7 @@ public class ContactCreationTests extends TestBase {
 
   @DataProvider
   public Iterator<Object[]> validContactsFromXml() throws IOException {
+    List<Object[]> list = new ArrayList<Object[]>();
     try (BufferedReader reader = new BufferedReader(new FileReader((new File("src/test/resources/contacts.xml"))))) {
       String xml = "";
       String line = reader.readLine();
@@ -34,7 +36,7 @@ public class ContactCreationTests extends TestBase {
       XStream xstream = new XStream();
       xstream.processAnnotations(ContactData.class);
       List<ContactData> contacts = (List<ContactData>) xstream.fromXML(xml);
-      return contacts.stream().map((g) -> new Object[]{g}).collect(Collectors.toList()).iterator();
+      return contacts.stream().map((contactData) -> new Object[]{contactData}).collect(Collectors.toList()).iterator();
     }
   }
 
@@ -56,9 +58,33 @@ public class ContactCreationTests extends TestBase {
     }
   }
 
-  @Test (dataProvider = "validContactsFromJson")
-  public void testContactCreation(ContactData contact) throws Exception {
+  @Test(dataProvider = "validContactsFromJson")
+  public void testContactCreationJson(ContactData contact) throws Exception {
+    Contacts before = app.contact().all();
+    app.contact().goToAddNewContactPage();
+    app.contact().create(contact, true);
+
+    try {
+      Thread.sleep(2000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    System.out.println(app.contact().count());
+    System.out.println(before.size() + 1);
+    Contacts after = app.contact().all();
+    assertThat(app.contact().count(), equalTo(before.size() + 1));
+    assertThat(after, equalTo
+            (before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
+  }
+
+  @Test
+  public void testContactCreation() {
     File photo = new File("src/test/resources/linux.png");
+    ContactData contact = new ContactData().withSurname("belaya").withName("maria").withPhoto(photo).withAddress("moscow")
+            .withHomePhone("5467890").withMobilPhone("8948372839").withWorkPhone("687932424").withEmail1("test@test.ru")
+            .withEmail2("test1@test.ru").withEmail3("test2@test.ru").withGroup("test 0");
+    app.goTo().homePage();
     Contacts before = app.contact().all();
     app.contact().goToAddNewContactPage();
     app.contact().create(contact, true);
@@ -71,40 +97,14 @@ public class ContactCreationTests extends TestBase {
 
     System.out.println(app.contact().count());
     System.out.println(before.size() + 1);
-    assertThat(app.contact().count(), equalTo(before.size() + 1));
     Contacts after = app.contact().all();
+    assertThat(app.contact().count(), equalTo(before.size() + 1));
     assertThat(after, equalTo
             (before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
   }
 
 
-  @Test 
-  public void testContactCreation() throws Exception {
-      File photo = new File("src/test/resources/linux.png");
-    ContactData contact = new ContactData().withSurname("belaya").withName("maria").withPhoto(photo).withAddress("moscow")
-            .withHomePhone("5467890").withMobilPhone("8948372839").withWorkPhone("687932424").withEmail1("test@test.ru")
-            .withEmail2("test1@test.ru").withEmail3("test2@test.ru");
-      app.goTo().homePage();
-      Contacts before = app.contact().all();
-      app.contact().goToAddNewContactPage();
-      app.contact().create(contact, true);
-
-      try {
-        Thread.sleep(3000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-
-      System.out.println(app.contact().count());
-      System.out.println(before.size() + 1);
-      assertThat(app.contact().count(), equalTo(before.size() + 1));
-      Contacts after = app.contact().all();
-      assertThat(after, equalTo
-              (before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
-    }
-
-
-  @Test (enabled = false)
+  @Test(enabled = false)
   public void testBadContactCreation() throws Exception {
     app.goTo().homePage();
     Contacts before = app.contact().all();
@@ -120,9 +120,10 @@ public class ContactCreationTests extends TestBase {
       e.printStackTrace();
     }
 
-    assertThat(app.contact().count(), equalTo(before.size()));
     Contacts after = app.contact().all();
+    assertThat(app.contact().count(), equalTo(before.size()));
     assertThat(after, equalTo(before));
   }
+
 }
 

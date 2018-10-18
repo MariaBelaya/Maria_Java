@@ -29,6 +29,16 @@ public class HelperBase {
     }
   }
 
+  public void selectDropdown(By Locator, String text) {
+    click(Locator);
+    if (text != null) {
+      String existingTest = wd.findElement(Locator).getAttribute("value");
+      if (!text.equals(existingTest)) {
+        wd.findElement(Locator).sendKeys(text);
+      }
+    }
+  }
+
   public void attach(By Locator, File file) {
     if (file != null) {
       wd.findElement(Locator).sendKeys(file.getAbsolutePath());
