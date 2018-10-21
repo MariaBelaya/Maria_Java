@@ -63,7 +63,7 @@ public class ContactCreationTests extends TestBase {
 
   @Test(dataProvider = "validContactsFromJson")
   public void testContactCreationJson(ContactData contact) throws Exception {
-    Contacts before = app.contact().all();
+    Contacts before = app.db().contacts();
     app.contact().goToAddNewContactPage();
     app.contact().create(contact, true);
 
@@ -75,7 +75,7 @@ public class ContactCreationTests extends TestBase {
 
     System.out.println(app.contact().count());
     System.out.println(before.size() + 1);
-    Contacts after = app.contact().all();
+    Contacts after = app.db().contacts();
     assertThat(app.contact().count(), equalTo(before.size() + 1));
     assertThat(after, equalTo
             (before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
@@ -89,7 +89,7 @@ public class ContactCreationTests extends TestBase {
             .withHomePhone("5467890").withMobilPhone("8948372839").withWorkPhone("687932424").withEmail1("test@test.ru")
             .withEmail2("test1@test.ru").withEmail3("test2@test.ru").withGroup("test 0");
     app.goTo().homePage();
-    Contacts before = app.contact().all();
+    Contacts before = app.db().contacts();
     app.contact().goToAddNewContactPage();
     app.contact().create(contact, true);
 
@@ -101,8 +101,7 @@ public class ContactCreationTests extends TestBase {
 
     System.out.println(app.contact().count());
     System.out.println(before.size() + 1);
-    Contacts after = app.contact().all();
-    assertThat(app.contact().count(), equalTo(before.size() + 1));
+    Contacts after = app.db().contacts();
     assertThat(after, equalTo
             (before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
   }
@@ -111,7 +110,7 @@ public class ContactCreationTests extends TestBase {
   @Test(enabled = false)
   public void testBadContactCreation() throws Exception {
     app.goTo().homePage();
-    Contacts before = app.contact().all();
+    Contacts before = app.db().contacts();
     app.contact().goToAddNewContactPage();
     ContactData contact = new ContactData().withSurname("Belaya").withName("Maria'").withAddress("Moscow")
             .withHomePhone("5467890").withMobilPhone("8948372839").withWorkPhone("687932424").withEmail1("test@test.ru")
@@ -124,8 +123,7 @@ public class ContactCreationTests extends TestBase {
       e.printStackTrace();
     }
 
-    Contacts after = app.contact().all();
-    assertThat(app.contact().count(), equalTo(before.size()));
+    Contacts after = app.db().contacts();
     assertThat(after, equalTo(before));
   }
 

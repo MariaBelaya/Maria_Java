@@ -216,7 +216,9 @@ public class ContactData {
 
     if (id != that.id) return false;
     if (name != null ? !name.equals(that.name) : that.name != null) return false;
-    return surname != null ? surname.equals(that.surname) : that.surname == null;
+    if (surname != null ? !surname.equals(that.surname) : that.surname != null) return false;
+
+    return true;
   }
 
   @Override
