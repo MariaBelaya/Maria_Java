@@ -3,42 +3,81 @@ package ru.stqa.pft.addressbook.model;
 import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 
 @XStreamAlias("contact")
+@Entity
+@Table(name = "addressbook")
 public class ContactData {
   @XStreamOmitField
 
+
+  @Id
+  @Column(name = "id")
   private int id = Integer.MAX_VALUE;
-  @Expose
+
+  @Column(name = "firstname")
   private String name;
-  @Expose
+
+  @Column(name = "lastname")
   private String surname;
-  @Expose
+
+  @Transient
   private String address;
-  @Expose
+
+  @Transient
   private String group;
+
+  @Transient
   private String allPhones;
+
+  @Column(name = "work")
+  @Type(type = "text")
   private String workPhone;
+
+  @Column(name = "mobile")
+  @Type(type = "text")
   private String mobilPhone;
-  @Expose
+
+  @Column(name = "home")
+  @Type(type = "text")
   private String homePhone;
+
+  @Transient
   private String allEmails;
-  @Expose
+
+  @Transient
   private String email;
+
+  @Transient
   private String email2;
+
+  @Transient
   private String email3;
-  private File photo;
+
+  @Column(name = "photo")
+  @Type(type = "text")
+  private String photo;
+
+  @ManyToMany(fetch = FetchType.EAGER)
+  @JoinTable(name = "address_in_groups",
+          joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+  private Set<GroupData> groups = new HashSet<GroupData>();
+
 
 
   public ContactData withPhoto(File photo) {
-    this.photo = photo;
+    this.photo = photo.getPath();
     return this;
   }
 
   public File getPhoto() {
-    return photo;
+    return new File(photo);
   }
 
   public ContactData withAddress(String address) {
