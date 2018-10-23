@@ -21,11 +21,13 @@ public class ContactHelper extends HelperBase {
 
   public void openEditContactPageById(int id) {
     wd.findElement(By.xpath("//input[@value='" + id + "']/../../td/a/img[@title='Edit']")).click();
+    //    wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+
   }
 
-//  public void openEditContactPage(int index) {
-//    wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
-//  }
+  public void openEditContactPage(int index) {
+    wd.findElements(By.xpath("//img[@alt='Edit']")).get(index).click();
+  }
 
   public void deleteContact() {
     click(By.xpath("//form[2]/input[2]"));
