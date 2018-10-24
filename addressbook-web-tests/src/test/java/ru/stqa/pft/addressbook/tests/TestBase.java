@@ -23,9 +23,8 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class TestBase {
+
   Logger logger = LoggerFactory.getLogger(TestBase.class);
-
-
   protected static final ApplicationManager app = new ApplicationManager(System.getProperty("browser", BrowserType.FIREFOX));
 
   @BeforeSuite
@@ -42,7 +41,6 @@ public class TestBase {
   @BeforeMethod
   public void LogTestStart(Method m, Object[] p) {
     logger.info("Start test" + m.getName() + " with parameters" + Arrays.asList(p));
-
   }
 
   @AfterMethod(alwaysRun = true)
@@ -57,7 +55,6 @@ public class TestBase {
       assertThat(uiGroups, equalTo(dbGroups.stream().map((g) -> new GroupData()
               .withId(g.getId()).withName(g.getName())).collect(Collectors.toSet())));
     }
-
   }
 
   public void verifyContactListInUi() {

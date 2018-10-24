@@ -30,9 +30,6 @@ public class ContactData {
   private String address;
 
   @Transient
-  private String group;
-
-  @Transient
   private String allPhones;
 
   @Column(name = "work")
@@ -68,6 +65,11 @@ public class ContactData {
           joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
   private Set<GroupData> groups = new HashSet<GroupData>();
 
+//  @ManyToMany(fetch = FetchType.EAGER)
+//  @JoinTable(name = "address_in_groups",
+//          joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+//  private Set<GroupData> groups = new HashSet<GroupData>();
+
 
 
   public ContactData withPhoto(File photo) {
@@ -77,6 +79,15 @@ public class ContactData {
 
   public File getPhoto() {
     return new File(photo);
+  }
+
+    public ContactData inGroup(GroupData group) {
+      groups.add(group);
+      return this;
+  }
+
+  public Groups getGroups() {
+    return new Groups(groups);
   }
 
   public ContactData withAddress(String address) {
@@ -141,11 +152,6 @@ public class ContactData {
     return this;
   }
 
-  public ContactData withGroup(String group) {
-    this.group = group;
-    return this;
-  }
-
   public int getId() {
     return id;
   }
@@ -156,10 +162,6 @@ public class ContactData {
 
   public String getSurname() {
     return surname;
-  }
-
-  public String getGroup() {
-    return group;
   }
 
   public String getWorkPhone() {
@@ -204,6 +206,7 @@ public class ContactData {
             "id=" + id +
             ", name='" + name + '\'' +
             ", surname='" + surname + '\'' +
+            ", groups=" + groups +
             '}';
   }
 
@@ -217,8 +220,7 @@ public class ContactData {
     if (id != that.id) return false;
     if (name != null ? !name.equals(that.name) : that.name != null) return false;
     if (surname != null ? !surname.equals(that.surname) : that.surname != null) return false;
-
-    return true;
+    return groups != null ? groups.equals(that.groups) : that.groups == null;
   }
 
   @Override
@@ -226,6 +228,7 @@ public class ContactData {
     int result = id;
     result = 31 * result + (name != null ? name.hashCode() : 0);
     result = 31 * result + (surname != null ? surname.hashCode() : 0);
+    result = 31 * result + (groups != null ? groups.hashCode() : 0);
     return result;
   }
 }
