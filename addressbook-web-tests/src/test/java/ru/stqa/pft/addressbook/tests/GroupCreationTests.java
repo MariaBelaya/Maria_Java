@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
@@ -67,6 +69,8 @@ public class GroupCreationTests extends TestBase {
 
   @Test
   public void testGroupCreation() throws Exception {
+//    WebDriver driver = new FirefoxDriver();
+//    driver.manage().window().maximize();
     app.goTo().groupPage();
     Groups before = app.db().groups();
     GroupData group = new GroupData().withName("test2");
