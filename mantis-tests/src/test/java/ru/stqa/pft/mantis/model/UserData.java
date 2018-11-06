@@ -54,4 +54,36 @@ public class UserData {
     this.password = password;
     return this;
   }
+
+  @Override
+  public String toString() {
+    return "UserData{" +
+            "id=" + id +
+            ", username='" + username + '\'' +
+            ", email='" + email + '\'' +
+            ", password='" + password + '\'' +
+            '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    UserData userData = (UserData) o;
+
+    if (id != userData.id) return false;
+    if (username != null ? !username.equals(userData.username) : userData.username != null) return false;
+    if (email != null ? !email.equals(userData.email) : userData.email != null) return false;
+    return password != null ? password.equals(userData.password) : userData.password == null;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = id;
+    result = 31 * result + (username != null ? username.hashCode() : 0);
+    result = 31 * result + (email != null ? email.hashCode() : 0);
+    result = 31 * result + (password != null ? password.hashCode() : 0);
+    return result;
+  }
 }

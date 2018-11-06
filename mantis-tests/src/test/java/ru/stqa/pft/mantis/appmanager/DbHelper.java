@@ -36,5 +36,13 @@ public class DbHelper {
     session.refresh(o);
     session.close();
   }
+
+  public Users getUsersFromBD() {
+    return getUsersFromBD();
+  }
+
+  public void setUsersFromBD(Users usersFromBD) {
+    this.getUsersFromBD = usersFromBD;
+  }
 }
 

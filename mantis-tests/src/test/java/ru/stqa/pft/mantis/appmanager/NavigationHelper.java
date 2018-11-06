@@ -11,5 +11,9 @@ import org.openqa.selenium.By;
     public void manageUser(){
       click(By.linkText("Manage Users"));
     }
+
+    public void goToUserPage(int id) {
+      click(By.cssSelector("a[href=\"manage_user_edit_page.php?user_id=" + id + "\"]"));
+    }
   }
 

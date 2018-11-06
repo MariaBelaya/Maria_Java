@@ -28,6 +28,9 @@ public class ApplicationManager {
   private NavigationHelper navigationHelper;
   private UserManagmentHelper userManagmentHelper;
   private DbHelper dbHelper;
+  private SoapHelper soapHelper;
+  private UserHelper userHelper;
+
 
   public ApplicationManager(String browser) {
     this.browser = browser;
@@ -38,6 +41,10 @@ public class ApplicationManager {
     String target = System.getProperty("target", "local");
     properties.load(new FileReader(new File(String.format("src/test/resources/%s.properties", target))));
     dbHelper = new DbHelper();
+  }
+
+  public void logout() {
+    wd.findElement(By.linkText("Logout")).click();
   }
 
 
@@ -123,4 +130,26 @@ public class ApplicationManager {
     return dbHelper;
   }
 
+  public SoapHelper soap() {
+    if (soapHelper == null) {
+      soapHelper = new SoapHelper(this);
+    }
+    return soapHelper;
+  }
+
+  public NavigationHelper getNavigationHelper() {
+    return navigationHelper;
+  }
+
+  public void setNavigationHelper(NavigationHelper navigationHelper) {
+    this.navigationHelper = navigationHelper;
+  }
+
+  public UserHelper getUserHelper() {
+    return userHelper;
+  }
+
+  public void setUserHelper(UserHelper userHelper) {
+    this.userHelper = userHelper;
+  }
 }
