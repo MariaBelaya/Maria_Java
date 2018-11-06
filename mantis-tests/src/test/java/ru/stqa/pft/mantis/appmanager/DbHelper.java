@@ -42,7 +42,7 @@ public class DbHelper {
   }
 
   public void setUsersFromBD(Users usersFromBD) {
-    this.getUsersFromBD = usersFromBD;
+//    this.getUsersFromBD() = usersFromBD;
   }
 }
 

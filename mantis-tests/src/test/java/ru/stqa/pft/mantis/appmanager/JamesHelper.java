@@ -13,11 +13,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class JamesHelper {
 
+  private static Message m;
   private ApplicationManager app;
 
   private TelnetClient telnet;
@@ -31,7 +33,7 @@ public class JamesHelper {
   public JamesHelper(ApplicationManager app) {
     this.app = app;
     telnet = new TelnetClient();
-    mailSession = Session.getDefaultInstance(System.getProperties());
+//    mailSession = Session.getDefaultInstance(System.getProperties());
   }
 
   public boolean doesUserExist(String name) {
@@ -137,14 +139,14 @@ public class JamesHelper {
   }
 
   private Folder openInbox(String username, String password) throws MessagingException, javax.mail.MessagingException {
-    store = mailSession.getStore("pop3");
+//    store = mailSession.getStore("pop3");
     store.connect(mailserver, username, password);
     Folder folder = store.getDefaultFolder().getFolder("INBOX");
     folder.open(Folder.READ_WRITE);
     return folder;
   }
 
-  public List<MailMessage> waitForMail(String username, String password, long timeout) throws MessagingException {
+  public List<MailMessage> waitForMail(String username, String password, long timeout) throws MessagingException, javax.mail.MessagingException {
     long now = System.currentTimeMillis();
     while (System.currentTimeMillis() < now + timeout) {
       List<MailMessage> allMail = getAllMail(username, password);
@@ -162,22 +164,15 @@ public class JamesHelper {
 
   public List<MailMessage> getAllMail(String username, String password) throws MessagingException, javax.mail.MessagingException {
     Folder inbox = openInbox(username, password);
-    List<MailMessage> messages = Arrays.asList(inbox.getMessages()).stream().map((m) -> {
-      try {
-        return toModelMail(m);
-      } catch (MessagingException e) {
-        e.printStackTrace();
-      } catch (javax.mail.MessagingException e) {
-        e.printStackTrace();
-      }
-    }).collect(Collectors.toList());
+    List<MailMessage> messages = Arrays.asList(inbox.getMessages()).stream().map((m) -> toModelMail(m)).collect(Collectors.toList());
     closeFolder(inbox);
     return messages;
   }
 
-  public static MailMessage toModelMail(Message m) throws MessagingException, javax.mail.MessagingException {
+  public static MailMessage toModelMail(Message m) throws javax.mail.MessagingException {
+    JamesHelper.m = m;
     try {
-      return new MailMessage(m.getAllRecipients()[0].toString(), (String) m.getContent());
+      return new MailMessage(m.getAllRecipients()[0].toString(), (String) m.getContent(), new Date(m.getSentDate().getTime()));
     } catch (IOException e) {
       e.printStackTrace();
       return null;

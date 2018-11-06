@@ -1,3 +1,4 @@
+
 package ru.stqa.pft.mantis.tests;
 
 import org.testng.annotations.AfterMethod;
@@ -7,6 +8,7 @@ import ru.lanwen.verbalregex.VerbalExpression;
 import ru.stqa.pft.mantis.appmanager.HttpSession;
 import ru.stqa.pft.mantis.model.MailMessage;
 import ru.stqa.pft.mantis.model.UserData;
+
 import java.io.IOException;
 import java.util.List;
 

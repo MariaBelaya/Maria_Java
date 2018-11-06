@@ -1,5 +1,6 @@
 package ru.stqa.pft.mantis.appmanager;
 
+import biz.futureware.mantis.rpc.soap.client.*;
 import org.hibernate.service.spi.ServiceException;
 import ru.stqa.pft.mantis.model.Issue;
 import ru.stqa.pft.mantis.model.Project;
@@ -19,7 +20,7 @@ public class SoapHelper {
     this.app = app;
   }
 
-  public Set<Project> getProjects() throws RemoteException, MalformedURLException, ServiceException {
+  public Set<Project> getProjects() throws RemoteException, MalformedURLException, ServiceException, javax.xml.rpc.ServiceException {
     MantisConnectPortType mc = getMantisConnect();
     ProjectData[] projects = mc.mc_projects_get_user_accessible(app.getProperty("web.adminLogin"),
             app.getProperty("web.adminPassword"));
@@ -28,12 +29,12 @@ public class SoapHelper {
             .collect(Collectors.toSet());
   }
 
-  private MantisConnectPortType getMantisConnect() throws ServiceException, MalformedURLException {
+  private MantisConnectPortType getMantisConnect() throws ServiceException, MalformedURLException, javax.xml.rpc.ServiceException {
     return new MantisConnectLocator()
             .getMantisConnectPort(new URL(app.getProperty("mantisconnect.url")));
   }
 
-  public Issue addIssue(Issue issue) throws MalformedURLException, ServiceException, RemoteException {
+  public Issue addIssue(Issue issue) throws MalformedURLException, ServiceException, RemoteException, javax.xml.rpc.ServiceException {
     MantisConnectPortType mc = getMantisConnect();
     String[] categories = mc.mc_project_get_categories(app.getProperty("web.adminLogin"),
             app.getProperty("web.adminPassword"), BigInteger.valueOf(issue.getProject().getId()));
@@ -55,7 +56,7 @@ public class SoapHelper {
 
   }
 
-  public Issue getIssueById(int issueId) throws MalformedURLException, ServiceException, RemoteException {
+  public Issue getIssueById(int issueId) throws MalformedURLException, ServiceException, RemoteException, javax.xml.rpc.ServiceException {
     MantisConnectPortType mc = getMantisConnect();
     IssueData issue = mc.mc_issue_get(app.getProperty("web.adminLogin"),
             app.getProperty("web.adminPassword"), BigInteger.valueOf(issueId));
