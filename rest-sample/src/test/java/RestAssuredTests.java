@@ -1,5 +1,10 @@
 
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+import com.jayway.restassured.RestAssured;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -31,7 +36,8 @@ public class RestAssuredTests {
     JsonElement parsed = new JsonParser().parse(json);
     JsonElement issues = parsed.getAsJsonObject().get("issues");
 
-    return new Gson().fromJson(issues, new TypeToken<Set<Issue>>() {}.getType());
+    return new Gson().fromJson(issues, new TypeToken<Set<Issue>>() {
+    }.getType());
   }
 
 
