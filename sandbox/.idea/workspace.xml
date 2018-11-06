@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="25078591-d8cd-454c-8914-3787760449f0" name="Default Changelist" comment="правки">
-      <change afterPath="$PROJECT_DIR$/../addressbook-web-tests/.gitignor" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+    <list default="true" id="25078591-d8cd-454c-8914-3787760449f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../soap-sample/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../soap-sample/gradlew.bat" afterDir="false" />
       <change beforePath="$USER_HOME$/IdeaProjects/Maria_Java/addressbook-web-tests/gradlew.bat" beforeDir="false" afterPath="$USER_HOME$/IdeaProjects/Maria_Java/addressbook-web-tests/gradlew.bat" afterDir="false" />
@@ -124,6 +122,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="20" />
+          <entry key="gitignor" value="2" />
           <entry key="gradle" value="298" />
           <entry key="gradle " value="2" />
           <entry key="java" value="17056" />
@@ -136,7 +135,7 @@
         <counts>
           <entry key="Groovy" value="298" />
           <entry key="JAVA" value="17056" />
-          <entry key="PLAIN_TEXT" value="57" />
+          <entry key="PLAIN_TEXT" value="59" />
           <entry key="Properties" value="47" />
           <entry key="XML" value="71" />
         </counts>
@@ -145,17 +144,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../addressbook-web-tests/.gitignor">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -2002,7 +1991,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="fillContactForm&#9;PSI&#9;JAVA://ru.stqa.pft.addressbook.appmanager.ApplicationManager#fillContactForm" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541500806648" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541501034896" />
     <property name="extract.method.default.visibility" value="public" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -2231,9 +2220,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="813" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3190272" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3190272" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -2248,8 +2236,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32771084" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32891566" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.30097088" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.12732475" side_tool="true" weight="0.46506023" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.79613733" visible="true" weight="0.30097088" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.20386267" side_tool="true" visible="true" weight="0.30097088" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32692307" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49928468" weight="0.3282967" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -2705,8 +2693,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../addressbook-web-tests/.gitignor">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="33" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
