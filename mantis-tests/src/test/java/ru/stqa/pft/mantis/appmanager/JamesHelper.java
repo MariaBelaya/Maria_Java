@@ -146,28 +146,28 @@ public class JamesHelper {
     return folder;
   }
 
-  public List<MailMessage> waitForMail(String username, String password, long timeout) throws MessagingException, javax.mail.MessagingException {
-    long now = System.currentTimeMillis();
-    while (System.currentTimeMillis() < now + timeout) {
-      List<MailMessage> allMail = getAllMail(username, password);
-      if (allMail.size() > 0) {
-        return allMail;
-      }
-      try {
-        Thread.sleep(1000);
-      } catch (InterruptedException e) {
-        e.printStackTrace();
-      }
-    }
-    throw new Error("No mail :(");
-  }
+//  public List<MailMessage> waitForMail(String username, String password, long timeout) throws MessagingException, javax.mail.MessagingException {
+//    long now = System.currentTimeMillis();
+//    while (System.currentTimeMillis() < now + timeout) {
+//      List<MailMessage> allMail = getAllMail(username, password);
+//      if (allMail.size() > 0) {
+//        return allMail;
+//      }
+//      try {
+//        Thread.sleep(1000);
+//      } catch (InterruptedException e) {
+//        e.printStackTrace();
+//      }
+//    }
+//    throw new Error("No mail :(");
+//  }
 
-  public List<MailMessage> getAllMail(String username, String password) throws MessagingException, javax.mail.MessagingException {
-    Folder inbox = openInbox(username, password);
-    List<MailMessage> messages = Arrays.asList(inbox.getMessages()).stream().map((m) -> toModelMail(m)).collect(Collectors.toList());
-    closeFolder(inbox);
-    return messages;
-  }
+//  public List<MailMessage> getAllMail(String username, String password) throws MessagingException, javax.mail.MessagingException {
+//    Folder inbox = openInbox(username, password);
+//    List<MailMessage> messages = Arrays.asList(inbox.getMessages()).stream().map((m) -> toModelMail(m)).collect(Collectors.toList());
+//    closeFolder(inbox);
+//    return messages;
+//  }
 
   public static MailMessage toModelMail(Message m) throws javax.mail.MessagingException {
     JamesHelper.m = m;
