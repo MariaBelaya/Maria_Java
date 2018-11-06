@@ -1,0 +1,4 @@
+/.idea/
+###> symfony/framework-bundle ###
+.DS_Store
+###> symfony/phpunit-bridge ###
