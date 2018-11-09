@@ -11,7 +11,7 @@ public class GithubTests {
   @Test
   public void testCommits() throws IOException {
     Github github = new RtGithub("cc4789f28ed0f7462bf9226aa14ce669d0d6c589");
-    RepoCommits commits = github.repos().get(new Coordinates.Simple("barancev", "java_pft")).commits();
+    RepoCommits commits = github.repos().get(new Coordinates.Simple("Maria", "MariaJava")).commits();
     for (RepoCommit commit : commits.iterate(new ImmutableMap.Builder<String, String>().build())) {
       System.out.println(new RepoCommit.Smart(commit).message());
     }
