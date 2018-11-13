@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactDeletionTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-18T16:13:15" hostname="MacBook-Pro-Maria.local" time="4.76">
+  <properties/>
+  <testcase name="testContactDeletion" classname="ru.stqa.pft.addressbook.tests.ContactDeletionTests" time="4.76"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1539879196100	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/index.php
+1539879196259	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/index.php
+1539879196260	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/index.php
+1539879196270	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/edit.php?id=297
+1539879196291	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/edit.php?id=297
+1539879196316	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/edit.php?id=297
+1539879196382	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/edit.php?id=297
+1539879196382	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/edit.php?id=297
+1539879196390	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/delete.php?id=297&update=Delete
+1539879196402	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/delete.php?id=297&update=Delete
+1539879196443	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/delete.php?id=297&update=Delete
+1539879196446	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/delete.php?id=297&update=Delete
+1539879196446	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/delete.php?id=297&update=Delete
+1539879196451	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/
+1539879196464	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/
+]]></system-err>
+</testsuite>

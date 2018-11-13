@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.stqa.pft.addressbook.tests.ContactModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-18T17:50:01" hostname="MacBook-Pro-Maria.local" time="9.877">
+  <properties/>
+  <testcase name="testContactModification" classname="ru.stqa.pft.addressbook.tests.ContactModificationTests" time="9.877"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[1539885002687	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/index.php
+1539885002833	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/index.php
+1539885002833	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/index.php
+1539885002842	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/edit.php?id=301
+1539885002854	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/edit.php?id=301
+1539885003570	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1539885004075	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1539885004776	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1539885005040	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1539885005290	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1539885005546	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1539885005810	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1539885006069	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+JavaScript error: resource://gre/modules/AutoCompletePopup.jsm, line 161: TypeError: Services.focus.focusedWindow is null
+JavaScript error: resource://gre/modules/AutoCompletePopup.jsm, line 161: TypeError: Services.focus.focusedWindow is null
+1539885006182	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/edit.php?id=301
+1539885006244	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/edit.php?id=301
+1539885006244	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/edit.php?id=301
+1539885006252	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/edit.php
+1539885006262	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/edit.php
+1539885006305	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/edit.php
+1539885006308	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/edit.php
+1539885006308	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/edit.php
+1539885006313	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/
+1539885006319	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/
+]]></system-err>
+</testsuite>
