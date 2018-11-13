@@ -15,7 +15,6 @@ public class GithubTests {
     for (RepoCommit commit : commits.iterate(new ImmutableMap.Builder<String, String>().build())) {
       System.out.println(new RepoCommit.Smart(commit).message());
     }
-
   }
 }
 
