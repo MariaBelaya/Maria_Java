@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 import com.jayway.restassured.RestAssured;
+import org.apache.http.client.fluent.Executor;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -40,6 +41,9 @@ public class RestAssuredTests {
     }.getType());
   }
 
+  private Executor getExecutor() {
+    return Executor.newInstance().auth("288f44776e7bec4bf44fdfeb1e646490", "");
+  }
 
   private int createIssue(Issue newIssue) throws IOException {
     String json = RestAssured.given()
