@@ -18,7 +18,7 @@ public class ApplicationManager {
   private String browser;
   private RegistrationHelper registrationHelper;
   private FtpHelper ftp;
-//  private MailHelper mailHelper;
+  private MailHelper mailHelper;
   private JamesHelper jamesHelper;
   private SessionHelper sessionHelper;
   private NavigationHelper navigationHelper;
