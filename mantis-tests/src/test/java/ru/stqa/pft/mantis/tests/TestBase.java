@@ -19,7 +19,7 @@ public class TestBase {
 
 
   @BeforeSuite(alwaysRun = true)
-  public void setUp() throws Exception {
+  public void setUp() throws IOException {
     app.init();
     app.ftp().upload(new File("src/test/resources/config_inc.php"), "config_inc.php", "config_inc.php.bak");
   }
@@ -43,6 +43,20 @@ public class TestBase {
 
   public void skipIfNotFixed(int issueId) throws RemoteException, ServiceException, MalformedURLException {
     if (isIssueOpen(issueId)) {
+      throw new SkipException("Ignored because of issue " + issueId);
+    }
+  }
+
+  public boolean isBugifyIssueOpen(int issueId) {
+    String issueStatus = app.bugify().getIssueByID(issueId);
+    if ((issueStatus.equals("Resolved")) || (issueStatus.equals("Closed"))) {
+      return false;
+    }
+    return true;
+  }
+
+  public void skipIfBugifyIssueNotFixed(int issueId) {
+    if (isBugifyIssueOpen(issueId)) {
       throw new SkipException("Ignored because of issue " + issueId);
     }
   }
