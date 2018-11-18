@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.566s</div>
+<div class="counter">0.448s</div>
 <p>duration</p>
 </div>
 </td>
@@ -64,7 +64,10 @@
 <a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Standard error</a>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
@@ -79,30 +82,59 @@
 </thead>
 <tr>
 <td class="success">testGroupDeletion</td>
-<td class="success">0.566s</td>
+<td class="success">0.448s</td>
 <td class="success">passed</td>
 </tr>
 </table>
 </div>
 <div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>19:08:11.679 [Test worker] INFO  r.s.pft.addressbook.tests.TestBase - Start testtestGroupDeletion with parameters[]
+Hibernate: select contactdat0_.id as id1_1_, contactdat0_.home as home2_1_, contactdat0_.mobile as mobile3_1_, contactdat0_.firstname as firstnam4_1_, contactdat0_.photo as photo5_1_, contactdat0_.lastname as lastname6_1_, contactdat0_.work as work7_1_ from addressbook contactdat0_ where deprecated='0000-00-00'
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groups0_.id as id1_0_0_, groups0_.group_id as group_id2_0_0_, groupdata1_.group_id as group_id1_2_1_, groupdata1_.group_footer as group_fo2_2_1_, groupdata1_.group_header as group_he3_2_1_, groupdata1_.group_name as group_na4_2_1_ from address_in_groups groups0_ inner join group_list groupdata1_ on groups0_.group_id=groupdata1_.group_id where groups0_.id=?
+Hibernate: select groupdata0_.group_id as group_id1_2_, groupdata0_.group_footer as group_fo2_2_, groupdata0_.group_header as group_he3_2_, groupdata0_.group_name as group_na4_2_ from group_list groupdata0_ where deprecated='0000-00-00'
+Hibernate: select groupdata0_.group_id as group_id1_2_, groupdata0_.group_footer as group_fo2_2_, groupdata0_.group_header as group_he3_2_, groupdata0_.group_name as group_na4_2_ from group_list groupdata0_ where deprecated='0000-00-00'
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>1539879760823	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
-1539879760883	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
-1539879760883	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
-1539879760890	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
-1539879760894	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
-1539879761119	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
-1539879761132	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
-1539879761182	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
-1539879761182	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
-1539879761187	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
-1539879761191	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
-1539879761230	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
-1539879761286	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
-1539879761287	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
-1539879761292	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
-1539879761298	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
+<pre>1542557291729	Marionette	TRACE	0 -&gt; [0,191,&quot;WebDriver:FindElement&quot;,{&quot;using&quot;:&quot;css selector&quot;,&quot;value&quot;:&quot;input[value='45']&quot;}]
+1542557291732	Marionette	TRACE	0 &lt;- [1,191,null,{&quot;value&quot;:{&quot;element-6066-11e4-a52e-4f735466cecf&quot;:&quot;977881f1-ac9a-1c4c-9046-e02fc0265ce7&quot;}}]
+1542557291736	Marionette	TRACE	0 -&gt; [0,192,&quot;WebDriver:ElementClick&quot;,{&quot;id&quot;:&quot;977881f1-ac9a-1c4c-9046-e02fc0265ce7&quot;}]
+1542557291944	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1542557291946	Marionette	TRACE	0 &lt;- [1,192,null,{&quot;value&quot;:null}]
+1542557291949	Marionette	TRACE	0 -&gt; [0,193,&quot;WebDriver:FindElement&quot;,{&quot;using&quot;:&quot;css selector&quot;,&quot;value&quot;:&quot;*[name='delete']&quot;}]
+1542557291951	Marionette	TRACE	0 &lt;- [1,193,null,{&quot;value&quot;:{&quot;element-6066-11e4-a52e-4f735466cecf&quot;:&quot;4e7c4a5e-7cf0-c048-a552-5fdacd117939&quot;}}]
+1542557291955	Marionette	TRACE	0 -&gt; [0,194,&quot;WebDriver:ElementClick&quot;,{&quot;id&quot;:&quot;4e7c4a5e-7cf0-c048-a552-5fdacd117939&quot;}]
+1542557291959	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
+1542557292028	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
+1542557292028	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
+1542557292038	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
+1542557292044	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
+1542557292044	Marionette	TRACE	0 &lt;- [1,194,null,{&quot;value&quot;:null}]
+1542557292053	Marionette	TRACE	0 -&gt; [0,195,&quot;WebDriver:FindElement&quot;,{&quot;using&quot;:&quot;link text&quot;,&quot;value&quot;:&quot;group page&quot;}]
+1542557292075	Marionette	TRACE	0 &lt;- [1,195,null,{&quot;value&quot;:{&quot;element-6066-11e4-a52e-4f735466cecf&quot;:&quot;d3048444-d8fa-2244-b11a-7f4317d61b6c&quot;}}]
+1542557292078	Marionette	TRACE	0 -&gt; [0,196,&quot;WebDriver:ElementClick&quot;,{&quot;id&quot;:&quot;d3048444-d8fa-2244-b11a-7f4317d61b6c&quot;}]
+1542557292084	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
+1542557292147	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
+1542557292147	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
+1542557292152	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
+1542557292155	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
+1542557292156	Marionette	TRACE	0 &lt;- [1,196,null,{&quot;value&quot;:null}]
 </pre>
 </span>
 </div>
@@ -114,7 +146,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 4.9</a> at 18.10.2018 19:22:41</p>
+<a href="http://www.gradle.org">Gradle 4.9</a> at Nov 18, 2018 7:08:12 PM</p>
 </div>
 </div>
 </body>
