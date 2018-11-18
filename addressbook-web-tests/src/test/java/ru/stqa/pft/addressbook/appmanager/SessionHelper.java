@@ -10,6 +10,11 @@ public class SessionHelper extends HelperBase {
   }
 
   public void login(String username, String password) {
+    try {
+      Thread.sleep(2000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
     type (By.name("user"), username);
     type(By.name("pass"), password);
     click(By.xpath("//form[@id='LoginForm']/input[3]"));

@@ -1,31 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.stqa.pft.addressbook.tests.GroupModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-10-18T16:22:39" hostname="MacBook-Pro-Maria.local" time="1.56">
+<testsuite name="ru.stqa.pft.addressbook.tests.GroupModificationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-11-18T16:08:10" hostname="MacBook-Pro-Maria.local" time="1.512">
   <properties/>
-  <testcase name="testGroupModification" classname="ru.stqa.pft.addressbook.tests.GroupModificationTests" time="1.56"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[1539879759161	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
-1539879759217	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
-1539879759217	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
-1539879759223	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
-1539879759227	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
-1539879759491	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
-1539879759514	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
-1539879759577	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
-1539879759577	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
-1539879759582	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
-1539879759588	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
-1539879759810	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
-1539879760069	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
-1539879760355	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
-1539879760408	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
-1539879760460	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
-1539879760460	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
-1539879760466	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
-1539879760472	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
-1539879760516	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
-1539879760574	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
-1539879760574	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
-1539879760581	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
-1539879760585	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
+  <testcase name="testGroupModification" classname="ru.stqa.pft.addressbook.tests.GroupModificationTests" time="1.512"/>
+  <system-out><![CDATA[19:08:10.156 [Test worker] INFO  r.s.pft.addressbook.tests.TestBase - Start testtestGroupModification with parameters[]
+Hibernate: select groupdata0_.group_id as group_id1_2_, groupdata0_.group_footer as group_fo2_2_, groupdata0_.group_header as group_he3_2_, groupdata0_.group_name as group_na4_2_ from group_list groupdata0_ where deprecated='0000-00-00'
+Hibernate: select groupdata0_.group_id as group_id1_2_, groupdata0_.group_footer as group_fo2_2_, groupdata0_.group_header as group_he3_2_, groupdata0_.group_name as group_na4_2_ from group_list groupdata0_ where deprecated='0000-00-00'
+Hibernate: select groupdata0_.group_id as group_id1_2_, groupdata0_.group_footer as group_fo2_2_, groupdata0_.group_header as group_he3_2_, groupdata0_.group_name as group_na4_2_ from group_list groupdata0_ where deprecated='0000-00-00'
+]]></system-out>
+  <system-err><![CDATA[1542557290176	Marionette	TRACE	0 -> [0,154,"WebDriver:FindElement",{"using":"css selector","value":"h1"}]
+1542557290178	Marionette	TRACE	0 <- [1,154,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"8c7695a8-4387-6845-9466-44f1ccddc96d"}}]
+1542557290181	Marionette	TRACE	0 -> [0,155,"WebDriver:FindElement",{"using":"css selector","value":"h1"}]
+1542557290183	Marionette	TRACE	0 <- [1,155,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"8c7695a8-4387-6845-9466-44f1ccddc96d"}}]
+1542557290184	Marionette	TRACE	0 -> [0,156,"WebDriver:GetElementText",{"id":"8c7695a8-4387-6845-9466-44f1ccddc96d"}]
+1542557290187	Marionette	TRACE	0 <- [1,156,null,{"value":""}]
+1542557290190	Marionette	TRACE	0 -> [0,157,"WebDriver:FindElement",{"using":"link text","value":"groups"}]
+1542557290201	Marionette	TRACE	0 <- [1,157,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"2283b54a-5a5e-2844-b195-29c49a301988"}}]
+1542557290203	Marionette	TRACE	0 -> [0,158,"WebDriver:ElementClick",{"id":"2283b54a-5a5e-2844-b195-29c49a301988"}]
+1542557290208	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
+1542557290265	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
+1542557290265	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
+1542557290271	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
+1542557290275	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
+1542557290276	Marionette	TRACE	0 <- [1,158,null,{"value":null}]
+1542557290281	Marionette	TRACE	0 -> [0,159,"WebDriver:FindElement",{"using":"css selector","value":"input[value='46']"}]
+1542557290284	Marionette	TRACE	0 <- [1,159,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"88f8ce39-de9b-6c44-81e3-e4a0ff603505"}}]
+1542557290288	Marionette	TRACE	0 -> [0,160,"WebDriver:ElementClick",{"id":"88f8ce39-de9b-6c44-81e3-e4a0ff603505"}]
+1542557290499	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1542557290500	Marionette	TRACE	0 <- [1,160,null,{"value":null}]
+1542557290504	Marionette	TRACE	0 -> [0,161,"WebDriver:FindElement",{"using":"css selector","value":"*[name='edit']"}]
+1542557290507	Marionette	TRACE	0 <- [1,161,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"ae1a0d41-5e90-9840-8f74-9bbc738e2872"}}]
+1542557290510	Marionette	TRACE	0 -> [0,162,"WebDriver:ElementClick",{"id":"ae1a0d41-5e90-9840-8f74-9bbc738e2872"}]
+1542557290515	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
+1542557290587	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
+1542557290588	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
+1542557290596	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
+1542557290606	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
+1542557290607	Marionette	TRACE	0 <- [1,162,null,{"value":null}]
+1542557290611	Marionette	TRACE	0 -> [0,163,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_name']"}]
+1542557290613	Marionette	TRACE	0 <- [1,163,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"e164fa99-65b0-6c4e-87bc-054027241923"}}]
+1542557290619	Marionette	TRACE	0 -> [0,164,"WebDriver:ElementClick",{"id":"e164fa99-65b0-6c4e-87bc-054027241923"}]
+1542557290828	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1542557290830	Marionette	TRACE	0 <- [1,164,null,{"value":null}]
+1542557290835	Marionette	TRACE	0 -> [0,165,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_name']"}]
+1542557290839	Marionette	TRACE	0 <- [1,165,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"e164fa99-65b0-6c4e-87bc-054027241923"}}]
+1542557290846	Marionette	TRACE	0 -> [0,166,"WebDriver:ExecuteScript",{"args":[{"element-6066-11e4-a52e-4f735466cecf":"e164fa99-65b0-6c4e-87bc-054027241923"},"val ... dow!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);","scriptTimeout":null,"specialPowers":false}]
+1542557290852	Marionette	TRACE	0 <- [1,166,null,{"value":"test2"}]
+1542557290857	Marionette	TRACE	0 -> [0,167,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_name']"}]
+1542557290858	Marionette	TRACE	0 <- [1,167,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"e164fa99-65b0-6c4e-87bc-054027241923"}}]
+1542557290862	Marionette	TRACE	0 -> [0,168,"WebDriver:ElementClear",{"id":"e164fa99-65b0-6c4e-87bc-054027241923"}]
+1542557290865	Marionette	TRACE	0 <- [1,168,null,{"value":null}]
+1542557290870	Marionette	TRACE	0 -> [0,169,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_name']"}]
+1542557290872	Marionette	TRACE	0 <- [1,169,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"e164fa99-65b0-6c4e-87bc-054027241923"}}]
+1542557290876	Marionette	TRACE	0 -> [0,170,"WebDriver:ElementSendKeys",{"id":"e164fa99-65b0-6c4e-87bc-054027241923","text":"test1","value":["t","e","s","t","1"]}]
+1542557290894	Marionette	TRACE	0 <- [1,170,null,{"value":null}]
+1542557290898	Marionette	TRACE	0 -> [0,171,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_header']"}]
+1542557290901	Marionette	TRACE	0 <- [1,171,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"94386792-2757-a241-9355-9847fb8ea7ff"}}]
+1542557290907	Marionette	TRACE	0 -> [0,172,"WebDriver:ElementClick",{"id":"94386792-2757-a241-9355-9847fb8ea7ff"}]
+1542557291115	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1542557291116	Marionette	TRACE	0 <- [1,172,null,{"value":null}]
+1542557291120	Marionette	TRACE	0 -> [0,173,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_header']"}]
+1542557291126	Marionette	TRACE	0 <- [1,173,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"94386792-2757-a241-9355-9847fb8ea7ff"}}]
+1542557291136	Marionette	TRACE	0 -> [0,174,"WebDriver:ExecuteScript",{"args":[{"element-6066-11e4-a52e-4f735466cecf":"94386792-2757-a241-9355-9847fb8ea7ff"},"val ... dow!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);","scriptTimeout":null,"specialPowers":false}]
+1542557291144	Marionette	TRACE	0 <- [1,174,null,{"value":""}]
+1542557291147	Marionette	TRACE	0 -> [0,175,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_header']"}]
+1542557291149	Marionette	TRACE	0 <- [1,175,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"94386792-2757-a241-9355-9847fb8ea7ff"}}]
+1542557291154	Marionette	TRACE	0 -> [0,176,"WebDriver:ElementClear",{"id":"94386792-2757-a241-9355-9847fb8ea7ff"}]
+1542557291158	Marionette	TRACE	0 <- [1,176,null,{"value":null}]
+1542557291161	Marionette	TRACE	0 -> [0,177,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_header']"}]
+1542557291163	Marionette	TRACE	0 <- [1,177,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"94386792-2757-a241-9355-9847fb8ea7ff"}}]
+1542557291167	Marionette	TRACE	0 -> [0,178,"WebDriver:ElementSendKeys",{"id":"94386792-2757-a241-9355-9847fb8ea7ff","text":"test2","value":["t","e","s","t","2"]}]
+1542557291176	Marionette	TRACE	0 <- [1,178,null,{"value":null}]
+1542557291179	Marionette	TRACE	0 -> [0,179,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_footer']"}]
+1542557291181	Marionette	TRACE	0 <- [1,179,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"e6eeff0a-f96d-5341-b385-66fd821b4e6a"}}]
+1542557291187	Marionette	TRACE	0 -> [0,180,"WebDriver:ElementClick",{"id":"e6eeff0a-f96d-5341-b385-66fd821b4e6a"}]
+1542557291399	Marionette	DEBUG	[4294967297] Canceled page load listener because no navigation has been detected
+1542557291400	Marionette	TRACE	0 <- [1,180,null,{"value":null}]
+1542557291403	Marionette	TRACE	0 -> [0,181,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_footer']"}]
+1542557291405	Marionette	TRACE	0 <- [1,181,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"e6eeff0a-f96d-5341-b385-66fd821b4e6a"}}]
+1542557291411	Marionette	TRACE	0 -> [0,182,"WebDriver:ExecuteScript",{"args":[{"element-6066-11e4-a52e-4f735466cecf":"e6eeff0a-f96d-5341-b385-66fd821b4e6a"},"val ... dow!='undefined'?window.document:null}, arguments);}\n).apply(null, arguments);","scriptTimeout":null,"specialPowers":false}]
+1542557291418	Marionette	TRACE	0 <- [1,182,null,{"value":""}]
+1542557291422	Marionette	TRACE	0 -> [0,183,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_footer']"}]
+1542557291423	Marionette	TRACE	0 <- [1,183,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"e6eeff0a-f96d-5341-b385-66fd821b4e6a"}}]
+1542557291427	Marionette	TRACE	0 -> [0,184,"WebDriver:ElementClear",{"id":"e6eeff0a-f96d-5341-b385-66fd821b4e6a"}]
+1542557291429	Marionette	TRACE	0 <- [1,184,null,{"value":null}]
+1542557291432	Marionette	TRACE	0 -> [0,185,"WebDriver:FindElement",{"using":"css selector","value":"*[name='group_footer']"}]
+1542557291434	Marionette	TRACE	0 <- [1,185,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"e6eeff0a-f96d-5341-b385-66fd821b4e6a"}}]
+1542557291438	Marionette	TRACE	0 -> [0,186,"WebDriver:ElementSendKeys",{"id":"e6eeff0a-f96d-5341-b385-66fd821b4e6a","text":"test3","value":["t","e","s","t","3"]}]
+1542557291445	Marionette	TRACE	0 <- [1,186,null,{"value":null}]
+1542557291448	Marionette	TRACE	0 -> [0,187,"WebDriver:FindElement",{"using":"css selector","value":"*[name='update']"}]
+1542557291452	Marionette	TRACE	0 <- [1,187,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"2cc8a690-3b69-344b-980c-6452266bc652"}}]
+1542557291456	Marionette	TRACE	0 -> [0,188,"WebDriver:ElementClick",{"id":"2cc8a690-3b69-344b-980c-6452266bc652"}]
+1542557291462	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
+1542557291531	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
+1542557291532	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
+1542557291545	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
+1542557291549	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
+1542557291553	Marionette	TRACE	0 <- [1,188,null,{"value":null}]
+1542557291559	Marionette	TRACE	0 -> [0,189,"WebDriver:FindElement",{"using":"link text","value":"group page"}]
+1542557291587	Marionette	TRACE	0 <- [1,189,null,{"value":{"element-6066-11e4-a52e-4f735466cecf":"d3555241-d879-4d40-9379-b949c6d6f750"}}]
+1542557291591	Marionette	TRACE	0 -> [0,190,"WebDriver:ElementClick",{"id":"d3555241-d879-4d40-9379-b949c6d6f750"}]
+1542557291595	Marionette	DEBUG	[4294967297] Received DOM event beforeunload for http://localhost/addressbook/group.php
+1542557291655	Marionette	DEBUG	[4294967297] Received DOM event pagehide for http://localhost/addressbook/group.php
+1542557291655	Marionette	DEBUG	[4294967297] Received DOM event unload for http://localhost/addressbook/group.php
+1542557291660	Marionette	DEBUG	[4294967297] Received DOM event DOMContentLoaded for http://localhost/addressbook/group.php
+1542557291664	Marionette	DEBUG	[4294967297] Received DOM event pageshow for http://localhost/addressbook/group.php
+1542557291665	Marionette	TRACE	0 <- [1,190,null,{"value":null}]
 ]]></system-err>
 </testsuite>
