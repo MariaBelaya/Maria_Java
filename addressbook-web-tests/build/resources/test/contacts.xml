@@ -1,0 +1,38 @@
+<list>
+  <contact>
+    <name>maria
+0</name>
+    <surname>belaya
+0</surname>
+    <address>moscow
+0</address>
+    <homePhone>12345
+0</homePhone>
+    <email>test@test.ru
+0</email>
+  </contact>
+  <contact>
+    <name>maria
+1</name>
+    <surname>belaya
+1</surname>
+    <address>moscow
+1</address>
+    <homePhone>12345
+1</homePhone>
+    <email>test@test.ru
+1</email>
+  </contact>
+  <contact>
+    <name>maria
+2</name>
+    <surname>belaya
+2</surname>
+    <address>moscow
+2</address>
+    <homePhone>12345
+2</homePhone>
+    <email>test@test.ru
+2</email>
+  </contact>
+</list>
