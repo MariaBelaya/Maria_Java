@@ -2629,6 +2629,11 @@
       </map>
     </option>
   </component>
+<<<<<<< HEAD
+  <component name="ProjectFrameBounds">
+    <option name="x" value="49" />
+    <option name="y" value="23" />
+=======
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -2687,6 +2692,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+>>>>>>> 3318838af4ed40f5a6473437952cbd31299b4342
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -2748,6 +2754,9 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542209892372" />
+=======
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542184969773" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -2758,6 +2767,7 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$USER_HOME$/IdeaProjects/Maria_Java/rest-sample/src/test/java/ru/stqa/pft/rest" />
     </key>
+>>>>>>> 3318838af4ed40f5a6473437952cbd31299b4342
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
